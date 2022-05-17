@@ -2,15 +2,22 @@ body {
   background: rgb(209, 84, 84);
 }
 
+span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+  font-weight: 500;
+  color: rgb(125, 206, 100);
+  margin-left: 6rem;
+}
+
 .wrapper {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
 }
 
 #slider {
   position: relative;
   text-align: center;
-  top: 10px;
 }
 
 #slider {
@@ -24,7 +31,11 @@ body {
 
 #slides .image {
   width: 500%;
-  line-height: 0;
+}
+
+#slides .text {
+  text-align: start;
+  width: 500%;
 }
 
 #overflow {
@@ -33,11 +44,11 @@ body {
 }
 
 article img {
-  width: 100%;
+  width: 80%;
 }
 
 #workspace:checked ~ #slider {
-  max-width: 960px;
+  max-width: 980px;
 }
 
 #toggle1:checked ~ #controls label:nth-child(5),
@@ -95,6 +106,26 @@ a {
   margin-left: -400%;
 }
 
+#toggle1:checked ~ #slides .text {
+  margin-left: 0;
+}
+
+#toggle2:checked ~ #slides .text {
+  margin-left: -100%;
+}
+
+#toggle3:checked ~ #slides .text {
+  margin-left: -200%;
+}
+
+#toggle4:checked ~ #slides .text {
+  margin-left: -300%;
+}
+
+#toggle5:checked ~ #slides .text {
+  margin-left: -400%;
+}
+
 #controls {
   margin: -33% 0 0 0;
   width: 100%;
@@ -110,8 +141,8 @@ a {
 }
 
 #active {
-  margin: 23% 0 0;
-  text-align: center;
+  margin: 26% 10% 0;
+  text-align: end;
 }
 
 #active label:hover {
@@ -132,10 +163,52 @@ a {
   transition: all 800ms cubic-bezier(0.42, 0, 1, 1);
 }
 
+#slides .text {
+  transition: all 800ms cubic-bezier(0.42, 0, 1, 1);
+}
+
 #controls label:hover {
   opacity: 0.6;
 }
 
 #controls label {
   transition: opacity 0.2s ease-out;
+}
+
+@media (max-width: 1250px) {
+  #controls {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  span {
+    margin-left: 5rem;
+    line-height: 5rem;
+  }
+
+  #controls {
+    display: none;
+  }
+
+  #active {
+    text-align: center;
+    margin: -10% 0 0;
+  }
+}
+
+@media (max-width: 320px) {
+  span {
+    margin-left: 2rem;
+    line-height: 5rem;
+  }
+
+  #controls {
+    display: none;
+  }
+
+  #active {
+    text-align: center;
+    margin: -25% 0 0;
+  }
 }
