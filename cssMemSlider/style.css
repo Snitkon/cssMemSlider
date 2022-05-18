@@ -25,16 +25,17 @@ span {
 
 #slider article {
   width: 20%;
-  float: left;
 }
 
 #slides .image {
+  display: flex;
   width: 500%;
 }
 
 #slides .text {
   text-align: start;
   width: 500%;
+  display: flex;
 }
 
 #overflow {
@@ -47,7 +48,7 @@ article img {
 }
 
 #workspace:checked ~ #slider {
-  max-width: 980px;
+  max-width: 960px;
 }
 
 #toggle1:checked ~ #controls label:nth-child(5),
@@ -56,9 +57,8 @@ article img {
 #toggle4:checked ~ #controls label:nth-child(3),
 #toggle5:checked ~ #controls label:nth-child(4) {
   background: url("../assets/img/prev_arrow.png") no-repeat;
-  float: left;
-  margin: 0 0 0 -64px;
-  display: block;
+  display: inline-block;
+  margin: 0 500px 0 -500px;
   height: 52px;
   width: 52px;
 }
@@ -69,9 +69,8 @@ article img {
 #toggle4:checked ~ #controls label:nth-child(5),
 #toggle5:checked ~ #controls label:nth-child(1) {
   background: url("../assets/img/next_arrow.png") no-repeat;
-  float: right;
-  margin: 0 -64px 0 0;
-  display: block;
+  display: inline-block;
+  margin: 0 -500px 0 500px;
   height: 52px;
   width: 52px;
 }
@@ -126,16 +125,19 @@ a {
 }
 
 #controls {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   margin: -33% 0 0 0;
   width: 100%;
-  height: 50px;
+  height: 3rem;
 }
 
 #active label {
-  border-radius: 10px;
+  border-radius: 0.5rem;
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 1rem;
+  height: 1rem;
   background: #bbb;
 }
 
@@ -174,7 +176,7 @@ a {
   transition: opacity 0.2s ease-out;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1000px) {
   #controls {
     display: none;
   }
