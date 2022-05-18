@@ -16,7 +16,6 @@ span {
 }
 
 #slider {
-  position: relative;
   text-align: center;
 }
 
@@ -179,6 +178,10 @@ a {
   #controls {
     display: none;
   }
+
+  #active {
+    margin: -2% 10% 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -197,7 +200,7 @@ a {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 450px) {
   span {
     margin-left: 2rem;
     line-height: 5rem;
